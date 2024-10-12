@@ -6,44 +6,44 @@ public class IntToRomanTest {
 
     public void intToRomanTest5(){
         IntegerToRoman intToRom = new IntegerToRoman();
-        String result = intToRom.integerToRoman(5);
-        Assertions.assertEquals(result, "V");
+        StringBuilder result = intToRom.integerToRomanConversion(5);
+        Assertions.assertEquals(result.toString(), "V");
 
     }
 
     @Test
     public void intToRomanTest4(){
         IntegerToRoman intToRom = new IntegerToRoman();
-        String result = intToRom.integerToRoman(4);
-        Assertions.assertEquals(result, "IV");
+        StringBuilder result = intToRom.integerToRomanConversion(4);
+        Assertions.assertEquals(result.toString(), "IV");
     }
 
     @Test
     public void intToRomanTest400(){
         IntegerToRoman intToRom = new IntegerToRoman();
-        String result = intToRom.integerToRoman(400);
-        Assertions.assertEquals(result, "CD");
+        StringBuilder result = intToRom.integerToRomanConversion(400);
+        Assertions.assertEquals(result.toString(), "CD");
     }
 
     @Test
     public void intToRomanTest63(){
         IntegerToRoman intToRom = new IntegerToRoman();
-        String result = intToRom.integerToRoman(63);
-        Assertions.assertEquals(result, "LXIII");
+        StringBuilder result = intToRom.integerToRomanConversion(63);
+        Assertions.assertEquals(result.toString(), "LXIII");
     }
 
     @Test
     public void intToRomanTest953(){
         IntegerToRoman intToRom = new IntegerToRoman();
-        String result = intToRom.integerToRoman(953);
-        Assertions.assertEquals(result, "CMLIII");
+        StringBuilder result = intToRom.integerToRomanConversion(953);
+        Assertions.assertEquals(result.toString(), "CMLIII");
     }
 
     @Test
     public void intToRomanTest3000(){
         IntegerToRoman intToRom = new IntegerToRoman();
-        String result = intToRom.integerToRoman(3000);
-        Assertions.assertEquals(result, "MMM");
+        StringBuilder result = intToRom.integerToRomanConversion(3000);
+        Assertions.assertEquals(result.toString(), "MMM");
     }
 
 

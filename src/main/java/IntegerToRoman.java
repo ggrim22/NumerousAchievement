@@ -3,7 +3,7 @@ import java.util.Map;
 
 public class IntegerToRoman {
     Map<Integer, String> romanMap = new LinkedHashMap<>();
-    public String integerToRoman(int input){
+    public StringBuilder integerToRomanConversion(int input){
         romanMap.put(1000, "M");
         romanMap.put(900, "CM");
         romanMap.put(500, "D");
@@ -18,22 +18,40 @@ public class IntegerToRoman {
         romanMap.put(4, "IV");
         romanMap.put(1, "I");
 
-        StringBuilder outputString;
+        StringBuilder romanNumeral = new StringBuilder();
 
-        ErrorCatch catchError = new ErrorCatch();
-
-        outputString = catchError.errorCatch(input);
 
         for(Map.Entry<Integer, String> entry : romanMap.entrySet()){
             while (input >= entry.getKey()){
-                outputString.append(entry.getValue());
+                romanNumeral.append(entry.getValue());
                 input -= entry.getKey();
             }
         }
 
-        return outputString.toString();
+        return romanNumeral;
     }
 
+    public StringBuilder errorCatch(int input){
+        StringBuilder errorMessage = new StringBuilder();
+        if(input > 3000){
+            errorMessage.append("Error: only numbers 1-3000");
+        }else if (input < 1){
+            errorMessage.append("This program accepts only positive numbers");
+        }
+
+        return errorMessage;
+    }
+
+
+    public StringBuilder integerToRomanNumeral(int input){
+        StringBuilder outputRomanNumeral = errorCatch(input);
+        if(!outputRomanNumeral.isEmpty()){
+            return outputRomanNumeral;
+        }
+
+        outputRomanNumeral = integerToRomanConversion(input);
+        return outputRomanNumeral;
+    }
 
 
 }
