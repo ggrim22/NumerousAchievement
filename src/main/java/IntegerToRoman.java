@@ -18,7 +18,11 @@ public class IntegerToRoman {
         romanMap.put(4, "IV");
         romanMap.put(1, "I");
 
-        StringBuilder outputString = new StringBuilder();
+        StringBuilder outputString;
+
+        ErrorCatch catchError = new ErrorCatch();
+
+        outputString = catchError.errorCatch(input);
 
         for(Map.Entry<Integer, String> entry : romanMap.entrySet()){
             while (input >= entry.getKey()){
@@ -29,5 +33,7 @@ public class IntegerToRoman {
 
         return outputString.toString();
     }
+
+
 
 }
