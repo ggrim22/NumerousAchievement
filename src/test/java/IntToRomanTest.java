@@ -39,6 +39,14 @@ public class IntToRomanTest {
         Assertions.assertEquals(result, "CMLIII");
     }
 
+    @Test
+    public void intToRomanTest3000(){
+        IntegerToRoman intToRom = new IntegerToRoman();
+        String result = intToRom.integerToRoman(3000);
+        Assertions.assertEquals(result, "MMM");
+    }
+
+
 
 
 }
